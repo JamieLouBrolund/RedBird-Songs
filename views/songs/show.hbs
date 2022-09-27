@@ -1,0 +1,94 @@
+<div class="row">
+    <div class="col s12 m8">
+        <h4>{{song.title}}
+            <small>{{{editIcon song.user user song._id false}}}</small>
+        </h4>
+    </div>
+    <div class="row">
+        <table class="striped">
+          <thead>
+             <tr>
+                <th>Artist</th>
+                <th>Date Created</th>
+            </tr>
+          </thead>
+            <tbody>
+                <tr>
+                    <td>{{song.artist}}</td>
+                    <td>{{formatDate date 'MMMM Do YYYY'}}
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <table class="striped">
+          <thead>
+             <tr>
+                <th>Genre</th>
+                <th>Mood</th>
+                <th>Theme</th>
+            </tr>
+          </thead>
+          <tbody>
+                <tr>
+                    <td>{{song.genre}}</td>
+                    <td>{{song.mood}}</td>
+                    <td>{{song.theme}}</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+        <div class="row">
+        <table class="striped">
+          <thead>
+             <tr>
+                <th>Co-Writer</th>
+                <th>Writer Split</th>
+                <th>PRO Information</th>
+            </tr>
+          </thead>
+          <tbody>
+                <tr>
+                    <td>{{song.coWriter}}</td>
+                    <td>{{song.writerSplit}}</td>
+                    <td>{{song.pro}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <table class="striped">
+          <thead>
+             <tr>
+                <th>Lyrics</th>
+            </tr>
+          </thead>
+          <tbody>
+                <tr>
+                    <td>{{song.body}}</td>
+                </tr>
+            </tbody>
+        </table>       
+    </div>
+        <div class="row">
+        <table class="striped">
+          <thead>
+             <tr>
+                <th>Recordings</th>
+            </tr>
+          </thead>
+          <tbody>
+                <tr>
+                    <td>{{song.songFile}}</td>
+                </tr>
+            </tbody>
+        </table>       
+    </div>
+    <div class="col s12 m4">
+        <div class="card center-align">
+            <div class="card-action">
+                <a href="/dashboard">Dashboard</a>
+            </div>
+        </div>
+    </div>
+</div>

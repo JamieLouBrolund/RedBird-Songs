@@ -1,0 +1,32 @@
+- add more specs to song model
+    -recording with cloudinary
+    -Artist
+    -genre
+    -moood
+    -theme
+    -cowriter
+    -writersplit
+    -proNum
+
+-take out public/ private view
+-edit show, edit, add, and dahsboard views
+
+
+
+FROM PROCESS ADD FROM
+ title: req.body.title,
+      artist: req.body.artist,
+      genre: req.body.genre,
+      mood: req.body.mood,
+      theme: req.body.theme,
+      coWriter: req.body.coWriter,
+      writerSplit: req.body.writerSplit,
+      pro: req.body.pro,
+      body: req.body.body,
+      status: req.body.status,
+      user: req.user.id,
+      songFile: result.secure_url,
+      cloudinaryId: result.public_id,
+
+DESIGN
+-change login Design 

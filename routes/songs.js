@@ -14,24 +14,46 @@ router.get("/add", ensureAuth, (req, res) => {
 
 //@desc Process add form
 //@Route POST /songs
-router.post("/", ensureAuth, async (req, res) => {
+router.post("/", upload.single("file"), ensureAuth, async (req, res) => {
   try {
-    //const result = await cloudinary.uploader.upload//(req.file.path, {
-    //  resource_type: "video",
-    //});
-    //upload.single("file");
+    const result = await cloudinary.uploader.upload(req.file.path, {
+      resource_type: "video",
+    });
 
-    await Song.create({
+    /* await Song.create({
       title: req.body.title,
+      artist: req.body.artist,
+      genre: req.body.genre,
+      theme: req.body.theme,
+      mood: req.body.mood,
+      coWriter: req.body.cowriter,
+      writerSplit: req.body.writerSplit,
+      pro: req.body.pro,
       body: req.body.body,
-      songLink: req.body.songFile,
-      //image: req.secure_url,
-      //songFile: req.secure_url,
-      //cloudinaryId: result.public_id,
+      songFileName: req.body.songFileName,
+      image: result.secure_url,
+      songFile: result.secure_url,
+      cloudinaryId: result.public_id,
       user: req.user.id,
     });
+    */
     req.body.user = req.user.id;
-    //await Song.create(req.body);
+    await Song.create({
+      body: req.body.body,
+      title: req.body.title,
+      artist: req.body.artist,
+      genre: req.body.genre,
+      theme: req.body.theme,
+      mood: req.body.mood,
+      coWriter: req.body.coWriter,
+      writerSplit: req.body.writerSplit,
+      pro: req.body.pro,
+      songFileName: req.body.songFileName,
+      image: result.secure_url,
+      songFile: result.secure_url,
+      cloudinaryId: result.public_id,
+      user: req.user.id,
+    });
     res.redirect("/dashboard");
   } catch (err) {
     console.error(err);
@@ -67,7 +89,7 @@ router.get("/:id", ensureAuth, async (req, res) => {
       return res.render("error/404");
     }
 
-    res.render("songs/edit", {
+    res.render("songs/show", {
       song,
     });
   } catch (err) {

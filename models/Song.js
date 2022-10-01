@@ -47,7 +47,7 @@ const SongSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-  songLink: {
+  songFileName: {
     type: String,
     required: false,
   },
@@ -59,10 +59,10 @@ const SongSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
-  // cloudinaryId: {
-  //  type: String,
-  //  required: true,
-  //},
+  cloudinaryId: {
+    type: String,
+    required: true,
+  },
 });
 
 module.exports = mongoose.model("Song", SongSchema);

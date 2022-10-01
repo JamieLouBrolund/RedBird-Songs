@@ -1,6 +1,6 @@
 <h3>Add Song</h3>
 <div class="row">
-    <form action="/songs" method="POST" class="col s12">
+    <form action="/songs" method="POST" class="col s12" enctype="multipart/form-data">
         <div class="row">
             <div class="input-field">
                 <input type="text" id="title" name="title">
@@ -50,17 +50,24 @@
             </div>
         </div>
         <div class="row">
+            <div class=""input-field>
+                <label for="imgUpload" class="form-label">Image</label>
+                <input type="file" class="form-control" id="imageUpload" name="file">
+            </div>
+        </div>
+        <div class="row">
             <div class="input-field">
-                <input type="text" id="songLink" name="songLink">
-                <label for="songLink">Recording Link</label>
+                <input type="text" id="songFileName" name="songFileName">
+                <label for="songFileName">Audio File Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <label for="audioUpload" class="form-label">Audio</label>
+                <input type="file" class="form-control" id="songFile" name="file">
             </div>
         </div>
 <!--
-        <div class="row">
-                <label for="imgUpload" class="form-label">Image</label>
-                <input type="file" class="form-control" id="imageUpload" name="file">
-        </div>
-
        <div class="row">
             <div class="input-field">
                 <select id="status" name="status">
@@ -71,15 +78,14 @@
             </div>
         </div>
         
-
         <div>
-                <label for="audioUpload" class="form-label" src="{{song_id.audioFile}}">Audio</label>
+                <label for="audioUpload" class="form-label" src="{{song_id.songFile}}">Audio</label>
                 <input type="file" class="form-control" id="songFile" name="file">
                 </div>
                 <div>
                 <audio controls src="{{song.songFile}}"></audio>
           </div>
-        
+        -->
      
         <div class="row">
             <div class="input-field">
@@ -87,20 +93,6 @@
                 <textarea id="body" name="body"></textarea>
             </div>
         </div>
-        <div class="row">
-            <div class="input-field">
-                <input type="file" id="songFile" name="songFile">
-                <label for="songFile">Recording</label>
-            </div>
-        </div>
-                
-                <div>
-                <audio controls src="{{song.songFile}}"></audio>
-                
-          </div>
-          -->
-        
-
         <div class="row">
             <input type="submit" value="Save" class="btn">
             <a href="/dashboard" class="btn orange">Cancel</a>

@@ -1,78 +1,79 @@
 <h3>Edit Song</h3>
-
 <div class="row">
     <form action="/songs/{{song._id}}" method="POST" class="col s12">
-        <input type="hidden" name="_method" value="PUT">
-
+    <input type="hidden" name="_method" value="PUT">
         <div class="row">
             <div class="input-field">
                 <input type="text" id="title" name="title" value="{{song.title}}">
                 <label for="title">Song Title</label>
             </div>
         </div>
-                <div class="row">
+
+        <div class="row">
             <div class="input-field">
                 <input type="text" id="artist" name="artist" value="{{song.artist}}">
                 <label for="artist">Artist</label>
             </div>
         </div>
+
         <div class="row">
             <div class="input-field">
                 <input type="text" id="genre" name="genre" value="{{song.genre}}">
                 <label for="genre">Genre</label>
             </div>
         </div>
+
         <div class="row">
             <div class="input-field">
                 <input type="text" id="mood" name="mood" value="{{song.mood}}">
                 <label for="mood">Mood</label>
             </div>
         </div>
+
         <div class="row">
             <div class="input-field">
                 <input type="text" id="theme" name="theme" value="{{song.theme}}">
                 <label for="theme">Theme</label>
             </div>
         </div>
+
         <div class="row">
             <div class="input-field">
                 <input type="text" id="coWriter" name="coWriter" value="{{song.coWriter}}">
                 <label for="coWriter">Co-Writer</label>
             </div>
-        </div>        
+        </div>
+
         <div class="row">
             <div class="input-field">
                 <input type="text" id="writerSplit" name="writerSplit" value="{{song.writerSplit}}">
                 <label for="writerSplit">Writer Split</label>
             </div>
         </div>
+
         <div class="row">
             <div class="input-field">
-                <input type="text" id="songFile" name="songFile" value="{{song.songFile}}">
-                <label for="songFile">Recording Link</label>
+                <label for="imgUpload" class="form-label">Image</label>
+                <input type="file" class="form-control" id="imageUpload" name="file">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="songFileName" name="songFileName">
+                <label for="songFileName">Audio File Name</label>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="input-field">
+                <label for="audioUpload" class="form-label">Audio</label>
+                <input type="file" class="form-control" id="songFile" name="file">
+                 <audio controls class="" src="{{song.songFile}}"></audio>
             </div>
         </div>
         <!--
         <div class="row">
-            <div class="input-field">
-                <input type="file" id="songFile" name="songFile" value="{{song.songFile}}" src="{{song.songFile}}">
-                <label for="coWriter">Recording</Co-Writer></label>
-            </div>
-        </div>
-        
-        
-          <div class="row">
-              <div>
-                <label for="audioUpload" class="form-label">Audio</label>
-                <input type="file" class="form-control" id="songFile" name="file">
-                <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
-                </div>
-                <div>
-                <audio controls src="{{song.songFile}}"></audio>
-            </form>
-          </div>
-
-        <!--<div class="row">
             <div class="input-field">
                 <select id="status" name="status">
                     {{#select song.status}}
@@ -96,6 +97,5 @@
             <input type="submit" value="Save" class="btn">
             <a href="/dashboard" class="btn orange">Cancel</a>
         </div>
-    </div>
     </form>
 </div>

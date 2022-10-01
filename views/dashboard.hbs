@@ -1,6 +1,6 @@
 <h6><b>DASHBOARD</b></h6>
 <h3>Welcome, {{name}}</h3>
-<p>Here are your songs</p>
+<p><b>Catalog</b></p>
 {{#if songs}}
     <table class="striped">
         <thead>
@@ -15,7 +15,7 @@
         <tbody>
             {{#each songs}}
                 <tr>
-                    <td>{{title}}</a></td>
+                    <td><a href="/songs/{{_id}}">{{title}}</a></td>
                     <td>{{artist}}</a></td>
                     <td>{{genre}}</td>
                     <td>{{formatDate createdAt 'MMMM Do YYYY'}}</td>

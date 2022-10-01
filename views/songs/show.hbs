@@ -70,20 +70,23 @@
             </tbody>
         </table>       
     </div>
-        <div class="row">
+    <div class="row">
         <table class="striped">
           <thead>
              <tr>
-                <th>Recordings</th>
+                <th>Recording File Name</th>
+                <th>Recording</th>
             </tr>
           </thead>
           <tbody>
                 <tr>
-                    <td>{{song.songFile}}</td>
+                    <td>{{song.songFileName}}</td>
+                    <td><audio controls class="" src="{{song.songFile}}"></audio>
+                    </td>
                 </tr>
             </tbody>
-        </table>       
-    </div>
+        </table> 
+    </div>      
     <div class="col s12 m4">
         <div class="card center-align">
             <div class="card-action">

@@ -62,7 +62,9 @@ Lastly, I would like to add a 'public' and 'private' view for each Song, and add
 
 # How to Get it Working:
 
-Add a .env file in the config folder with these values:
+NPM Install for the Dependencies
+
+Then add config.env file in the config folder with these values:
 * PORT = 2121 //or whatever you choose
 * MONGO_URI =  //MongoDB connection string
 * GOOGLE_CLIENT_ID = // Google Auth ID

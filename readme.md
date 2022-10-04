@@ -10,7 +10,7 @@ A simple and useful fullstack Song catalog management App, built for Songwriters
 ![signup](public/imgs/Dashboard-RedBird.png)
 ![dashboard page](public/imgs/redBird-readme-GIF.gif)
 
-> Be sure to add that lovely star 😀 and fork it for your own copy
+> Be sure to add that lovely star 😀  and fork it for your own copy
 
 ---
 
@@ -70,20 +70,3 @@ Add a .env file in the config folder with these values:
 * CLOUD_NAME = // Cloudinary Cloud Name
 * API_KEY = // Cloudinary key
 * API_SECRET = // Cloudinary Secret
-
-PORT = 2222
-
-MONGO_URI = mongodb+srv://jamielou222:Marley19trutH@cluster0.4t87i3h.mongodb.net/cowriter?retryWrites=true&w=majority
-
-GOOGLE_CLIENT_ID = 804512378221-j5l0umu9h7k587gf5snhouf3j6umqfrd.apps.googleusercontent.com
-
-GOOGLE_CLIENT_SECRET = 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
-
-CLOUD_NAME = dvu70r9b5
-
-API_KEY = 874639256965294
-
-API_SECRET = udwt1sX3c45S9vscmlGrbsPBhsA
----
-
-# Collaborators:

@@ -1,4 +1,4 @@
-<h3>Edit Song</h3>
+<h2>Edit Song</h2>
 <div class="row">
     <form action="/songs/{{song._id}}" method="POST" class="col s12">
     <input type="hidden" name="_method" value="PUT">
@@ -11,11 +11,21 @@
 
         <div class="row">
             <div class="input-field">
-                <input type="text" id="artist" name="artist" value="{{song.artist}}">
-                <label for="artist">Artist</label>
+                <input type="text" id="composer" name="composer" value="{{song.composer}}">
+                <label for="artist">Composer</label>
             </div>
         </div>
 
+        <div class="row">
+            <div class="input-field">
+                <h6>Lyrics:</h6>
+                <textarea id="lyrics" name="lyrics">{{song.lyrics}}</textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <h5>Meta-Data</h5>
+        </div>
         <div class="row">
             <div class="input-field">
                 <input type="text" id="genre" name="genre" value="{{song.genre}}">
@@ -37,10 +47,56 @@
             </div>
         </div>
 
+         <div class="row">
+            <h5>Rights</h5>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="affiliation" name="affiliation" value="{{song.affiliation}}">
+                <label for="affiliation">Affiliation</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="registered" name="registered" value="{{song.registered}}">
+                <label for="registered">Registered?</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="worksNum" name="worksNum" value="{{song.worksNum}}">
+                <label for="worksNum">Works #</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="iswc" name="iswc" value="{{song.iswc}}">
+                <label for="iswc">ISWC #</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="ipi" name="ipi" value="{{song.ipi}}">
+                <label for="ipi">IPI/CAE #</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="shares" name="shares" value="{{song.shares}}">
+                <label for="shares">Shares</label>
+            </div>
+        </div>
+
         <div class="row">
             <div class="input-field">
                 <input type="text" id="coWriter" name="coWriter" value="{{song.coWriter}}">
                 <label for="coWriter">Co-Writer</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="coWriterIpi" name="coWriterIpi" value="{{song.coWriterIpi}}">
+                <label for="coWriterIpi">Co-Writer IPI #</label>
             </div>
         </div>
 
@@ -51,28 +107,69 @@
             </div>
         </div>
 
-      <!--  <div class="row">
-            <div class="input-field">
-                <label for="imgUpload" class="form-label">Image</label>
-                <input type="file" class="form-control" id="imageUpload" name="file">
-            </div>
+        <div class="row">
+            <h5>Publishing</h5>
         </div>
--->
-        
         <div class="row">
             <div class="input-field">
-                <label for="audioUpload" class="form-label">Song Recording</label>
+                <input type="text" id="publishing" name="publishing" value="{{song.publishing}}">
+                <label for="publishing">Publishing</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="pubAffiliation" name="pubAffiliation" value="{{song.pubAffiliation}}">
+                <label for="pubAffiliation">Publisher Affiliation</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="pubShares" name="pubShares" value="{{song.pubShares}}">
+                <label for="pubShares">Publisher Shares</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="pubIpi" name="pubIpi" value="{{song.pubIpi}}">
+                <label for="pubIpi">Publisher IPI #</label>
+            </div>
+        </div>
+    
+    <div class="row">
+        <h5>Media</h5>
+    </div>
+        <div class="row">
+            <div class="input-field">
+                <h6>Audio</h6>
+                <label for="audioUpload" class="form-label"></label>
                 <input type="file" class="form-control" id="songFile" name="file">
                  <audio controls class="" src="{{song.songFile}}"></audio>
             </div>
         </div>
         <div class="row">
             <div class="input-field">
-                <input type="text" id="songFileName" name="songFileName">
+                <input type="text" id="songFileName" name="songFileName" value="{{song.songFileName}}">
                 <label for="songFileName">Audio File Name</label>
             </div>
         </div>
-        <!--
+<!--
+        <div class="row">
+            <div class=""input-field>
+                <h6>Split Sheet</h6>
+                <input type="file" class="form-control" id="imageUpload" name="file">
+                <label for="imgUpload" class="form-label"></label>
+            </div>
+        </div>
+         <div class="row">
+            <div class="input-field">
+                <h6>Publishing Agreement</h6>
+                <label for="imgUpload" class="form-label"></label>
+                <input type="file" class="form-control" id="pubFile" name="file">
+                 <img class="" src="{{song.pubFile}}"></audio>
+            </div>
+        </div>
+
+        
         <div class="row">
             <div class="input-field">
                 <select id="status" name="status">
@@ -86,13 +183,8 @@
         </div>
         -->
 
-        <div class="row">
-            <div class="input-field">
-                <h5>Lyrics:</h5>
-                <textarea id="body" name="body">{{song.body}}</textarea>
-            </div>
-        </div>
-
+</div>
+<div class="row">
         <div class="row">
             <input type="submit" value="Save" class="btn">
             <a href="/dashboard" class="btn orange">Cancel</a>

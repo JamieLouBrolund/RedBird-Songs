@@ -1,0 +1,47 @@
+<h3>Edit Contact</h3>
+<div class="row">
+    <form action="/contacts/{{contact._id}}" method="POST" class="col s12">
+    <input type="hidden" name="_method" value="PUT">
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="name" name="name" value="{{contact.name}}">
+                <label for="name">Name</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="pro" name="pro" value="{{contact.pro}}">
+                <label for="pro">PRO #</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="collabs" name="collabs" value="{{contact.collabs}}">
+                <label for="collabs">Collaborations</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="location" name="location" value="{{contact.location}}">
+                <label for="location">Location</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="email" name="email" value="{{contact.email}}">
+                <label for="email">Email</label>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <input type="submit" value="Save" class="btn">
+            <a href="/network" class="btn orange">Cancel</a>
+        </div>
+    </form>
+</div>

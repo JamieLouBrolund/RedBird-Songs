@@ -1,23 +1,28 @@
 express = require("express");
 const router = express.Router();
 const { ensureAuth } = require("../middleware/auth");
-
-const Network = require("../models/Network");
+const Contact = require("../models/Contact");
 
 //@desc Showw add page
 //@Route GET /network/add
-router.get("/add", ensureAuth, (req, res) => {
-  res.render("network/add");
+router.get("/addContact", ensureAuth, (req, res) => {
+  res.render("contacts/addContact");
 });
 
 //@desc Process add form
-//@Route POST /songs
+//@Route POST /contact
 router.post("/", ensureAuth, async (req, res) => {
   try {
-    //const result = await cloudinary.uploader.upload//(req.file.path);
     req.body.user = req.user.id;
-    await Network.create(req.body);
-    res.redirect("/dashboard");
+    await Contact.create({
+      body: req.body.body,
+      name: req.body.name,
+      pro: req.body.pro,
+      location: req.body.location,
+      email: req.body.email,
+      user: req.user.id,
+    });
+    res.redirect("/network");
   } catch (err) {
     console.error(err);
     res.render("error/500");
@@ -25,22 +30,22 @@ router.post("/", ensureAuth, async (req, res) => {
 });
 
 //@desc Show edit page
-//@Route GET /songs/edit/:id
-router.get("/edit/:id", ensureAuth, async (req, res) => {
+//@Route GET /contact/edit/:id
+router.get("/editContact/:id", ensureAuth, async (req, res) => {
   try {
-    const network = await Network.findOne({
+    const contact = await Contact.findOne({
       _id: req.params.id,
     }).lean();
 
-    if (!network) {
+    if (!contact) {
       return res.render("error/404");
     }
 
-    if (network.user != req.user.id) {
-      res.redirect("/network");
+    if (contact.user != req.user.id) {
+      res.redirect("/contacts");
     } else {
-      res.render("network/edit", {
-        network,
+      res.render("contacts/editContact", {
+        contact,
       });
     }
   } catch (err) {
@@ -49,20 +54,20 @@ router.get("/edit/:id", ensureAuth, async (req, res) => {
   }
 });
 
-//@desc Update Song
-//@Route PUT /songs/:id
+//@desc Update Contact
+//@Route PUT /contacts/:id
 router.put("/:id", ensureAuth, async (req, res) => {
   try {
-    let network = await Network.findById(req.params.id).lean();
+    let contact = await Contact.findById(req.params.id).lean();
 
-    if (!network) {
+    if (!contact) {
       return res.render("error/404");
     }
 
-    if (network.user != req.user.id) {
-      res.redirect("/network");
+    if (contact.user != req.user.id) {
+      res.redirect("/contacts");
     } else {
-      network = await Network.findOneAndUpdate(
+      contact = await Contact.findOneAndUpdate(
         { _id: req.params.id },
         req.body,
         {
@@ -71,7 +76,7 @@ router.put("/:id", ensureAuth, async (req, res) => {
         }
       );
 
-      res.redirect("/dashboard");
+      res.redirect("/network");
     }
   } catch (err) {
     console.error(err);
@@ -79,30 +84,30 @@ router.put("/:id", ensureAuth, async (req, res) => {
   }
 });
 
-//@desc Delete song
-//@Route DELETE /song/:id
+//@desc Delete contact
+//@Route DELETE /contacts/:id
 router.delete("/:id", ensureAuth, async (req, res) => {
   try {
-    await Network.remove({ _id: req.params.id });
-    res.redirect("/dashboard");
+    await Contact.remove({ _id: req.params.id });
+    res.redirect("/network");
   } catch (err) {
     console.error(err);
     return res.render("error/500");
   }
 });
 
-// @desc    User songs
-// @route   GET /songs/user/:userId
+// @desc    User Contact
+// @route   GET /contact/user/:userId
 router.get("/user/:userId", ensureAuth, async (req, res) => {
   try {
-    const network = await Network.find({
+    const contact = await Contact.find({
       user: req.params.userId,
     })
       .populate("user")
       .lean();
 
-    res.render("network/index", {
-      network,
+    res.render("contacts/index", {
+      contact,
     });
   } catch (err) {
     console.error(err);

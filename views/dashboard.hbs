@@ -1,5 +1,5 @@
 
-<h5><b>DASHBOARD</b></h5>
+<h5><b>CATALOG</b></h5>
 
 
 {{#if songs}}
@@ -7,7 +7,7 @@
         <thead>
             <tr>
                 <th>Song Title</th>
-                <th>Artist</th>
+                <th>Composer</th>
                 <th>Genre</th>
                 <th>Created</th>
                 <th></th>
@@ -17,7 +17,7 @@
             {{#each songs}}
                 <tr>
                     <td><a href="/songs/{{_id}}">{{title}}</a></td>
-                    <td>{{artist}}</a></td>
+                    <td>{{composer}}</a></td>
                     <td>{{genre}}</td>
                     <td>{{formatDate createdAt 'MMMM Do YYYY'}}</td>
                 <td>

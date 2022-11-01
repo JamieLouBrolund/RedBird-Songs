@@ -19,6 +19,17 @@ p {
     margin-right: 10px;
 }
 
+* > .fa-hover-show,
+*:hover > .fa-hover-hidden {
+  display: none;
+}
+*:hover > .fa-hover-show {
+  display: inline-block;
+  
+}
+
+
+
 .img-small {
     width: 180px;
 }
@@ -28,6 +39,9 @@ body {
     
 }
 
+h5 {
+    color: rgb(232, 71, 71);
+}
 
 .header container{
     color: red;

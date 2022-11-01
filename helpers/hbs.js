@@ -5,7 +5,7 @@ module.exports = {
     return moment(date).format(format);
   },
   stripTags: function (input) {
-    return input.replace(/<(?:.|\n)*?>/gm, "");
+    return input.replace(/<(?:.|\n)*?>/gm, " ");
   },
   truncate: function (str, len) {
     if (str.length > len && str.length > 0) {
@@ -18,11 +18,23 @@ module.exports = {
     return str;
   },
   editIcon: function (songUser, loggedUser, songId, floating = true) {
-    if (songUser._id.toString() == loggedUser._id.toString()) {
+    if (songUser._id.toString() == loggedUser._id.toString()){
       if (floating) {
-        return `<a href="/songs/edit/${songId}" class="btn-floating halfway-fab blue"><i class="fas fa-edit fa-small"></i></a>`;
+        return (`<a href="/songs/edit/${songId}" class="btn-floating halfway-fab blue"><i class="fas fa-edit fa-small"></i></a>` );
+       
       } else {
-        return `<a href="/songs/edit/${songId}"><i class="fas fa-edit"></i></a>`;
+        return (`<a href="/songs/edit/${songId}"><i class="fas fa-edit"></i></a>`);
+      }
+    } else {
+      return "";
+    }
+  },
+  editContactIcon: function (contactUser, loggedUser, contactId, floating = true) {
+    if (contactUser._id.toString() == loggedUser._id.toString()){
+      if (floating) {
+        return (`<a href="/contacts/editContact/${contactId}" class="btn-floating halfway-fab blue"><i class="fas fa-edit fa-small"></i></a>` );
+      } else {
+        return (`<a href="/contacts/editContacs/${contactId}"><i class="fas fa-edit"></i></a>` || `<a href="/contacts/edit/${contactId}"><i class="fas fa-edit"></i></a>`);
       }
     } else {
       return "";

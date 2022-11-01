@@ -1,0 +1,43 @@
+<h5><b>Network</b></h5>
+
+
+{{#if contacts}}
+
+    <table class="striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>PRO</th>
+                <th>Collabs</th>
+                <th>Location</th>
+                <th>Contact</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each contacts}}
+                <tr>
+                    <td><a href="/contacts/{{_id}}">{{name}}</a></td>
+                    <td>{{pro}}</a></td>
+                    <td>{{collabs}}</td>
+                    <td>{{location}}</td>
+                    <td><a href="mailto:{{contact.email}}">{{email}}</a></td>
+
+                <td>
+                        <a href="/contacts/editContact/{{_id}}" class="btn btn-float">
+                            <i class="fas fa-edit"></i>
+                        </a>
+
+                        <form action="/contacts/{{_id}}" method="POST" id="delete-form">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn red">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+{{else}}
+    <p>You have not added any Contacts. Add one now!</p>
+{{/if}}

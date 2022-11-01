@@ -1,4 +1,4 @@
-<h3>Add Song</h3>
+<h2>Add Song</h2>
 <div class="row">
     <form action="/songs" method="POST" class="col s12" enctype="multipart/form-data">
         <div class="row">
@@ -9,9 +9,20 @@
         </div>
         <div class="row">
             <div class="input-field">
-                <input type="text" id="artist" name="artist">
-                <label for="artist">Artist</label>
+                <input type="text" id="composer" name="composer">
+                <label for="composer">Composer</label>
             </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <h6>Lyrics:</h6>
+                <textarea id="lyrics" name="lyrics"></textarea>
+            </div>
+        </div>
+    
+
+        <div class="row">
+            <h5>Meta-Data</h5>
         </div>
         <div class="row">
             <div class="input-field">
@@ -31,6 +42,46 @@
                 <label for="theme">Theme</label>
             </div>
         </div>
+    
+        <div class="row">
+            <h5>Rights</h5>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="affiliation" name="affiliation">
+                <label for="affiliation">Affiliation</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="registered" name="registered">
+                <label for="registered">Registered?</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="workNum" name="workNum">
+                <label for="workNum">Works #</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="iswc" name="iswc">
+                <label for="iswc">ISWC Number</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="ipi" name="ipi">
+                <label for="ipi">IPI/CAE Number</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="shares" name="shares">
+                <label for="shares">Shares</label>
+            </div>
+        </div>
         <div class="row">
             <div class="input-field">
                 <input type="text" id="coWriter" name="coWriter">
@@ -39,27 +90,53 @@
         </div>
         <div class="row">
             <div class="input-field">
+                <input type="text" id="coWriterIpi" name="coWriterIpi">
+                <label for="coWriterIpi">Co-Writer IPI #</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
                 <input type="text" id="writerSplit" name="writerSplit">
-                <label for="writerSplit">Writer Splits</label>
+                <label for="writerSplit">Writer Split</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <h5>Publishing</h5>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="publisher" name="publisher">
+                <label for="publisher">Publisher</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field">
-                <input type="text" id="pro" name="pro">
-                <label for="pro">PRO Infomation</label>
+                <input type="text" id="pubAffiliation" name="pubAffiliation">
+                <label for="pubAffiliation">Publisher Affiliation</label>
             </div>
         </div>
-        <!--
-        <div class="row">
-            <div class=""input-field>
-                <label for="imgUpload" class="form-label">Image</label>
-                <input type="file" class="form-control" id="imageUpload" name="file">
-            </div>
-        </div> -->
         <div class="row">
             <div class="input-field">
-                <label for="audioUpload" class="form-label">Song Recording</label>
+                <input type="text" id="pubShares" name="pubShares">
+                <label for="pubShares">Publisher Shares</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="pubIpi" name="pubIpi">
+                <label for="pubIpi">Publisher IPI #</label>
+            </div>
+        </div>
+
+    <div class="row">
+        <h5>Media</h5>
+    </div>
+        <div class="row">
+            <div class="input-field">
+                <h6>Audio</h6>
                 <input type="file" class="form-control" id="songFile" name="file">
+                <label for="audioUpload" class="form-label"></label>
             </div>
         </div>
         <div class="row">
@@ -68,7 +145,35 @@
                 <label for="songFileName">Audio File Name</label>
             </div>
         </div>
+    
+
 <!--
+    <div class="row">
+    <form action="/songs" method="POST" class="col s12" enctype="multipart/form-data">
+        <div class="row">
+            <div class=""input-field>
+                <h6>Split Sheet</h6>
+                <input type="file" class="form-control" id="imageUpload" name="file">
+                <label for="imgUpload" class="form-label"></label>
+            </div>
+        </div>
+    </form>
+    </div>
+    <div class="row">
+    <form action="/songs" method="POST" class="col s12" enctype="multipart/form-data">
+        <div class="row">
+            <div class=""input-field>
+                <h6>Publishing Agreement</h6>
+                <input type="file" class="form-control" id="imageUpload" name="file">
+                <label for="imgUpload" class="form-label"></label>
+            </div>
+        </div>
+    </form>
+    </div>
+
+        
+
+
        <div class="row">
             <div class="input-field">
                 <select id="status" name="status">
@@ -86,14 +191,10 @@
                 <div>
                 <audio controls src="{{song.songFile}}"></audio>
           </div>
-        -->
-     
-        <div class="row">
-            <div class="input-field">
-                <h5>Lyrics:</h5>
-                <textarea id="body" name="body"></textarea>
-            </div>
-        </div>
+          -->
+
+
+    <div class="row">        
         <div class="row">
             <input type="submit" value="Save" class="btn">
             <a href="/dashboard" class="btn orange">Cancel</a>

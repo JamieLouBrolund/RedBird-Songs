@@ -1,0 +1,26 @@
+<h1>Contacts</h1>
+<div class="row">
+    {{#each contacts}}
+        <div class="col s12 m4">
+            <div class="card">
+                <div class="card-image">
+                   {{{editIcon user ../user _id}}} 
+                   
+                </div>
+                <div class="card-content center-align"><h5>{{title}}</h5>
+                <p>{{truncate stripTags body 200}}</p>
+                <br> 
+                <div class="chip">
+                    <img alt="" src="{{user.image}}>
+                    <a href="/contacts/user/{{user._id}}">{{user.displayName}}</a>
+                </div>
+                </div>
+                <div class="card-action center-align">
+                    <a href="/contacts/{{_id}}" class="btn grey">More</a>
+                </div>
+            </div>
+        </div>
+    {{else}}
+        <p>No Contacts to display</p>
+    {{/each}}
+</div>

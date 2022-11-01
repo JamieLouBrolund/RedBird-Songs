@@ -4,23 +4,45 @@
             <small>{{{editIcon song.user user song._id false}}}</small>
         </h4>
     </div>
+</div>
+<div class="row">
     <div class="row">
+        <h5>Basics</h5>
         <table class="striped">
           <thead>
              <tr>
-                <th>Artist</th>
+                <th>Composer</th>
                 <th>Date Created</th>
             </tr>
           </thead>
             <tbody>
                 <tr>
-                    <td>{{song.artist}}</td>
+                    <td>{{song.composer}}</td>
                     <td>{{formatDate date 'MMMM Do YYYY'}}
                 </tr>
             </tbody>
         </table>
     </div>
+</div>
+<div class="row">
     <div class="row">
+        <table class="striped">
+          <thead>
+             <tr>
+                <th>Lyrics</th>
+            </tr>
+          </thead>
+          <tbody>
+                <tr>
+                    <td>{{song.lyrics}}</td>
+                </tr>
+            </tbody>
+        </table>       
+    </div>
+</div>
+<div class="row">
+    <div class="row">
+        <h5>Meta-Data</h5>
         <table class="striped">
           <thead>
              <tr>
@@ -37,21 +59,30 @@
                 </tr>
             </tbody>
         </table>
-        </div>
-        <div class="row">
+    </div>
+</div>
+<div class="row">
+    <div class="row">
+        <h5>Rights</h5>
         <table class="striped">
           <thead>
              <tr>
-                <th>Co-Writer</th>
-                <th>Writer Split</th>
-                <th>PRO Information</th>
+                <th>Affiliation</th>
+                <th>Works #</th>
+                <th>Registered</th>
+                <th>ISWC Number</th>
+                <th>IPI/CAE Number</th>
+                <th>Shares</th>
             </tr>
           </thead>
           <tbody>
                 <tr>
-                    <td>{{song.coWriter}}</td>
-                    <td>{{song.writerSplit}}</td>
-                    <td>{{song.pro}}</td>
+                    <td>{{song.affiliation}}</td>
+                    <td>{{song.workNum}}</td>
+                    <td>{{song.registered}}</td>
+                    <td>{{song.iswc}}</td>
+                    <td>{{song.ipi}}</td>
+                    <td>{{song.shares}}</td>
                 </tr>
             </tbody>
         </table>
@@ -60,22 +91,52 @@
         <table class="striped">
           <thead>
              <tr>
-                <th>Lyrics</th>
+                <th>Cowriter</th>
+                <th>Writer Split</th>
+                <th>Cowriter IPI #</th>
             </tr>
           </thead>
           <tbody>
                 <tr>
-                    <td>{{song.body}}</td>
+                    <td>{{song.coWriter}}</td>
+                    <td>{{song.writerSplit}}</td>
+                    <td>{{song.coWriterIpi}}</td>
                 </tr>
             </tbody>
-        </table>       
+        </table>
     </div>
+</div>
+<div class="row">
+    <div class="row">
+        <h5>Publishing</h5>
+        <table class="striped">
+          <thead>
+             <tr>
+                <th>Publisher</th>
+                <th>Affiliation</th>
+                <th>Publisher Shares</th>
+                <th>Publisher IPI #</th>
+            </tr>
+          </thead>
+          <tbody>
+                <tr>
+                    <td>{{song.publisher}}</td>
+                    <td>{{song.pubAffiliation}}</td>
+                    <td>{{song.pubShares}}</td>
+                    <td>{{song.pubIpi}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+<div class="row">
+    <h5>Media</h5>
     <div class="row">
         <table class="striped">
           <thead>
              <tr>
-                <th>Recording File Name</th>
-                <th>Recording</th>
+                <th>Audio File Name</th>
+                <th>Audio</th>
             </tr>
           </thead>
           <tbody>
@@ -86,7 +147,9 @@
                 </tr>
             </tbody>
         </table> 
-    </div>      
+    </div> 
+ 
+<div class="row">   
     <div class="col s12 m4">
         <div class="card center-align">
             <div class="card-action">

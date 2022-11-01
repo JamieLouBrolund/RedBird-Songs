@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const NetworkSchema = new mongoose.Schema({
+const ContactSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -18,6 +18,10 @@ const NetworkSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
+  email: {
+    type: String,
+    required: false,
+  },
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
@@ -25,4 +29,4 @@ const NetworkSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Network", NetworkSchema);
+module.exports = mongoose.model("Contact", ContactSchema);

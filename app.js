@@ -15,7 +15,12 @@ dotenv.config({ path: "./config/config.env" });
 //LOAD PASSPORT
 require("./config/passport")(passport);
 
-connectDB();
+//connect to database before listening
+connectDB().then(()=> {
+  app.listen(PORT, () => {
+    console.log("listening for requests")
+  })
+});
 
 const app = express();
 
@@ -99,7 +104,8 @@ app.use("/contacts", require("./routes/contacts"));
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(
+/*app.listen(
   PORT,
   console.log(`Server running on ${process.env.NODE_ENV} mode on PORT ${PORT}`)
 );
+*/

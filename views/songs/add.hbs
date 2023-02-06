@@ -1,16 +1,17 @@
 <h2>Add Song</h2>
+<p><i>Fields with * are required</i></p>
 <div class="row">
     <form action="/songs" method="POST" class="col s12" enctype="multipart/form-data">
         <div class="row">
             <div class="input-field">
                 <input type="text" id="title" name="title">
-                <label for="title">Song Title</label>
+                <label for="title">Song Title *</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field">
                 <input type="text" id="composer" name="composer">
-                <label for="composer">Composer</label>
+                <label for="composer">Composer *</label>
             </div>
         </div>
         <div class="row">
@@ -134,8 +135,9 @@
     </div>
         <div class="row">
             <div class="input-field">
-                <h6>Audio</h6>
-                <input type="file" class="form-control" id="songFile" name="file">
+                <h6>Audio *</h6>
+                <p>(Maximum file size is 100 MB)</p>
+                <input type="file" class="form-control" id="songFile" name="file" >
                 <label for="audioUpload" class="form-label"></label>
             </div>
         </div>
@@ -201,9 +203,6 @@
         </div>
     </form>
 </div>
-JamieBrolund
+JamieLouBrolund
 © 2022
-Terms
-Privacy
-Security
-Status
+
